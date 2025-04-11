@@ -73,8 +73,8 @@ describe('Full journey of creating an application through school portal through 
         cy.then(() => {
             cy.visit('/')
 
-            cy.contains('Process appeals').click();
-
+            cy.visit('/Application/AppealsApplications?PageNumber=0');
+            //Tile removed but content behind the tile is still currently being used
             cy.scanPagesForNewValue(referenceNumber);
 
             cy.contains(referenceNumber).click();
