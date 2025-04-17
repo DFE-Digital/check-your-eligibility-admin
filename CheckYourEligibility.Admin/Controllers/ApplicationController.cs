@@ -166,8 +166,8 @@ public class ApplicationController : BaseController
         {
             var errors = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(TempData["Errors"].ToString());
             foreach (var kvp in errors)
-            foreach (var error in kvp.Value)
-                ModelState.AddModelError(kvp.Key, error);
+                foreach (var error in kvp.Value)
+                    ModelState.AddModelError(kvp.Key, error);
         }
 
         return View();
